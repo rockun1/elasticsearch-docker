@@ -103,6 +103,8 @@ VOLUME /usr/share/elasticsearch/data
 
 COPY docker-entrypoint.sh /
 
+RUN elasticsearch-plugin install analysis-kuromoji
+
 EXPOSE 9200 9300
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["elasticsearch"]
